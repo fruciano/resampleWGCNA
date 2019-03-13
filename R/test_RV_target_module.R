@@ -26,34 +26,36 @@
 #' }
 #'
 #' @export
-test_RV_target_module=function(OriginalData, Original_blockwiseModules, target_module, X, permutations=999, rarefied=FALSE, reps_rarefaction=1000, samplesize_rarefaction=NULL) {
-
-	extract_data_expr_target_module=OriginalData[,which(Original_blockwiseModules$colors==target_module)]
-	# Extract only the original data corresponding to the selected target module
-
-		if (rarefied==TRUE) {
-			if (length(samplesize_rarefaction)==0) {
-			stop(paste("rarefied set to TRUE but no samplesize_rarefaction provided"))
-			}
-		Rarefied_RV=GeometricMorphometricsMix::RVrarefied(Block1=extract_data_expr_target_module,
-												Block2=X, reps = reps_rarefaction, samplesize=samplesize_rarefaction)
-		} else { Rarefied_RV=NA }
-	# Subroutine to compute rarefied estimates of Escoufier RV
-
-	ObsRV=GeometricMorphometricsMix::EscoufierRV(extract_data_expr_target_module, X)
-	# Observed value of RV
-
-	n_obs=nrow(X)
-	permuted_indices=lapply(seq_len(permutations), function(x) sample(seq_len(n_obs), n_obs, replace=FALSE))
-	permuted_X=lapply(permuted_indices, function(x) cbind(X[x,]) )
-	# Create permuted X
-
-	permuted_RV=unlist(lapply(permuted_X, function(x) GeometricMorphometricsMix::EscoufierRV(extract_data_expr_target_module, x)))
-	p_value_perm = (length(which(permuted_RV >= ObsRV))+1)/(permutations + 1)
-	# Compute permuted RV and corresponding p value
-
-	Results=list(Observed_RV=ObsRV,
-					p_value_perm=p_value_perm,
-					Rarefied_RV=Rarefied_RV)
-return(Results)
-	}
+test_RV_target_module = function(OriginalData, Original_blockwiseModules, target_module, X, permutations = 999, rarefied = FALSE, 
+    reps_rarefaction = 1000, samplesize_rarefaction = NULL) {
+    
+    extract_data_expr_target_module = OriginalData[, which(Original_blockwiseModules$colors == target_module)]
+    # Extract only the original data corresponding to the selected target module
+    
+    if (rarefied == TRUE) {
+        if (length(samplesize_rarefaction) == 0) {
+            stop(paste("rarefied set to TRUE but no samplesize_rarefaction provided"))
+        }
+        Rarefied_RV = GeometricMorphometricsMix::RVrarefied(Block1 = extract_data_expr_target_module, Block2 = X, reps = reps_rarefaction, 
+            samplesize = samplesize_rarefaction)
+    } else {
+        Rarefied_RV = NA
+    }
+    # Subroutine to compute rarefied estimates of Escoufier RV
+    
+    ObsRV = GeometricMorphometricsMix::EscoufierRV(extract_data_expr_target_module, X)
+    # Observed value of RV
+    
+    n_obs = nrow(X)
+    permuted_indices = lapply(seq_len(permutations), function(x) sample(seq_len(n_obs), n_obs, replace = FALSE))
+    permuted_X = lapply(permuted_indices, function(x) cbind(X[x, ]))
+    # Create permuted X
+    
+    permuted_RV = unlist(lapply(permuted_X, function(x) GeometricMorphometricsMix::EscoufierRV(extract_data_expr_target_module, 
+        x)))
+    p_value_perm = (length(which(permuted_RV >= ObsRV)) + 1)/(permutations + 1)
+    # Compute permuted RV and corresponding p value
+    
+    Results = list(Observed_RV = ObsRV, p_value_perm = p_value_perm, Rarefied_RV = Rarefied_RV)
+    return(Results)
+}
