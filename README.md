@@ -1,7 +1,8 @@
 # resampleWGCNA - Resampling-based approaches to weighted gene coexpression analysis results
 
 This package contains two functions which were developed as part an [empirical study](https://doi.org/10.1093/gbe/evz108).
-If you use any of the functions in the package, kindly cite: 
+If you use any of the functions in the package, kindly cite:
+
 Fruciano C., Franchini P., Meyer A. *in press*. [Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish](https://doi.org/10.1093/gbe/evz108). *Genome Biology and Evolution* [doi: 10.1093/gbe/evz108](https://doi.org/10.1093/gbe/evz108)
 
 More specific citation details are provided in the help of each function.
