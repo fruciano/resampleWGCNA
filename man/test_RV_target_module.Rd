@@ -42,3 +42,20 @@ Optionally, it can also compute rarefied estimates of RV.
 Notice that this function requires the package GeometricMorphometricsMix
 and that the analysis can be computationally demanding for large modules
 }
+\section{Citation}{
+
+If you use this function please cite
+Fruciano et al. in press (development of the method for WGCNA results) and
+Escoufier 1973 (for the use of the RV statistic).
+
+If you use the option to get rarefied estimates, in addition to the above, please kindly cite
+Fruciano et al. 2013
+}
+
+\references{
+Escoufier Y. 1973. Le Traitement des Variables Vectorielles. Biometrics 29:751-760.
+
+Fruciano C., Franchini P., Meyer A. 2013. Resampling-Based Approaches to Study Variation in Morphological Modularity. PLoS ONE 8:e69376.
+
+Fruciano C., Franchini P., Meyer A. in press. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution
+}

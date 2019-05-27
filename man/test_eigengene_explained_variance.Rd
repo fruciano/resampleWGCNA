@@ -41,3 +41,11 @@ The target module should be expressed in the same way as when using blockwiseMod
 (i.e., color or number)
 Notice that option bicor=TRUE can be extremely computationally demanding
 }
+\section{Citation}{
+
+If you use this function please cite Fruciano et al. in press
+}
+
+\references{
+Fruciano C., Franchini P., Meyer A. in press. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution
+}

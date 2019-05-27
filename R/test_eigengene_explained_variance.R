@@ -25,6 +25,11 @@
 #'   \item{p_value}{The p value obtained through permutation}
 #' }
 #'
+#' @section Citation:
+#' If you use this function please cite Fruciano et al. in press
+#'
+#' @references Fruciano C., Franchini P., Meyer A. in press. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution
+#'
 #' @export
 test_eigengene_explained_variance = function(OriginalData, Original_blockwiseModules, target_module, permutations = 999, bicor = FALSE, 
     ...) {
