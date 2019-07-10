@@ -47,5 +47,5 @@ If you use this function please cite Fruciano et al. in press
 }
 
 \references{
-Fruciano C., Franchini P., Meyer A. in press. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution
+Fruciano C., Franchini P., Meyer A. 2019. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution 11(6):1644–1657.
 }
