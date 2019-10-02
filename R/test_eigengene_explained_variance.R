@@ -26,9 +26,9 @@
 #' }
 #'
 #' @section Citation:
-#' If you use this function please cite Fruciano et al. in press
+#' If you use this function please cite Fruciano et al. 2019
 #'
-#' @references Fruciano C., Franchini P., Meyer A. 2019. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution 11(6):1644–1657.
+#' @references Fruciano, C., Meyer, A., Franchini, P. 2019. Divergent allometric trajectories in gene expression and coexpression produce species differences in sympatrically speciating Midas cichlid fish.  Genome Biology and Evolution 11, 1644-1657.
 #'
 #' @export
 test_eigengene_explained_variance = function(OriginalData, Original_blockwiseModules, target_module, permutations = 999, bicor = FALSE,
