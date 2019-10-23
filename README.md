@@ -11,3 +11,11 @@ The package currently contains two functions, which perform permutation tests an
 
 - **test_eigengene_explained_variance**: performs a permutation test of the variance explained by the "eigengene" of a selected module
 - **test_RV_target_module**: performs a permutation test based on the Escoufier RV coefficient of the multivariate association between the expression of genes in a given module and a univariate or multivariate array (e.g., phenotype)
+
+## Installation
+From Github, using devtools
+
+```
+library(devtools)
+install_github("fruciano/resampleWGCNA")
+```
