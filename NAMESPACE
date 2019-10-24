@@ -2,3 +2,6 @@
 
 export(test_RV_target_module)
 export(test_eigengene_explained_variance)
+import(GeometricMorphometricsMix)
+importFrom(WGCNA,bicor)
+importFrom(WGCNA,moduleEigengenes)

@@ -15,7 +15,7 @@
 #' @param Original_blockwiseModules output of the blockwiseModules function
 #' @param target_module module whose largest eigenvalue/eigengene will be tested
 #' @param permutations number of permutations to use
-#' @param bicor whether one should use the standard eigengene function in WGCNA (default), or bicor
+#' @param usebicor whether one should use the standard eigengene function in WGCNA (default), or bicor
 #' @param ... further parameters to be passed to either moduleEigengenes or bicor
 #'
 #' @return The function outputs a list with the following elements:
@@ -29,23 +29,24 @@
 #' If you use this function please cite Fruciano et al. 2019
 #'
 #' @references Fruciano, C., Meyer, A., Franchini, P. 2019. Divergent allometric trajectories in gene expression and coexpression produce species differences in sympatrically speciating Midas cichlid fish.  Genome Biology and Evolution 11, 1644-1657.
-#'
+#' 
+#' @importFrom WGCNA bicor moduleEigengenes
 #' @export
-test_eigengene_explained_variance = function(OriginalData, Original_blockwiseModules, target_module, permutations = 999, bicor = FALSE,
+test_eigengene_explained_variance = function(OriginalData, Original_blockwiseModules, target_module, permutations = 999, usebicor = FALSE,
     ...) {
 
     extract_data_expr_target_module = OriginalData[, which(Original_blockwiseModules$colors == target_module)]
     # Extract only the original data corresponding to the selected target module
 
 
-    if (bicor == FALSE) {
-        moduleEigengenes_ALL = moduleEigengenes(OriginalData, colors = Original_blockwiseModules$colors, ...)
+    if (usebicor == FALSE) {
+        moduleEigengenes_ALL = WGCNA::moduleEigengenes(OriginalData, colors = Original_blockwiseModules$colors, ...)
         target_eigengene_ME = which(colnames(moduleEigengenes_ALL$eigengenes) == paste("ME", target_module, sep = ""))
         observed_explained_variance = moduleEigengenes_ALL$varExplained[target_eigengene_ME]
         # Compute module eigengenes for all the modules in the Original_blockwiseModules and select the explained variance for the
         # target module
     } else {
-        eigen_bicor_observed = eigen(bicor(extract_data_expr_target_module))$values
+        eigen_bicor_observed = eigen(WGCNA::bicor(extract_data_expr_target_module))$values
         observed_explained_variance = (eigen_bicor_observed/sum(eigen_bicor_observed))[1]
         moduleEigengenes_ALL = NA
         # use bicor and eigenvalue decomposition to compute the first eigenvalue
@@ -67,12 +68,12 @@ test_eigengene_explained_variance = function(OriginalData, Original_blockwiseMod
 
     colors_permutations = rep(1, ncol(permuted_datasets[[1]]))
     # simple vector of ones
-    if (bicor == FALSE) {
-        varExplained_permuted_datasets = unlist(lapply(permuted_datasets, function(X) moduleEigengenes(X, colors = colors_permutations,
+    if (usebicor == FALSE) {
+        varExplained_permuted_datasets = unlist(lapply(permuted_datasets, function(X) WGCNA::moduleEigengenes(X, colors = colors_permutations,
             ...)$varExplained))
     } else {
         varExplained_permuted_datasets = unlist(lapply(permuted_datasets, function(X) {
-            k = eigen(bicor(X))$values
+            k = eigen(WGCNA::bicor(X))$values
             (k/sum(k))[1]
         }))
     }

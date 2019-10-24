@@ -5,7 +5,7 @@
 \title{Test the significance of a target eigengene}
 \usage{
 test_eigengene_explained_variance(OriginalData, Original_blockwiseModules,
-  target_module, permutations = 999, bicor = FALSE, ...)
+  target_module, permutations = 999, usebicor = FALSE, ...)
 }
 \arguments{
 \item{OriginalData}{Matrix or data frame
@@ -18,7 +18,7 @@ containing the original data on which the blockwiseModules function has been run
 
 \item{permutations}{number of permutations to use}
 
-\item{bicor}{whether one should use the standard eigengene function in WGCNA (default), or bicor}
+\item{usebicor}{whether one should use the standard eigengene function in WGCNA (default), or bicor}
 
 \item{...}{further parameters to be passed to either moduleEigengenes or bicor}
 }
@@ -43,9 +43,9 @@ Notice that option bicor=TRUE can be extremely computationally demanding
 }
 \section{Citation}{
 
-If you use this function please cite Fruciano et al. in press
+If you use this function please cite Fruciano et al. 2019
 }
 
 \references{
-Fruciano C., Franchini P., Meyer A. 2019. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution 11(6):1644–1657.
+Fruciano, C., Meyer, A., Franchini, P. 2019. Divergent allometric trajectories in gene expression and coexpression produce species differences in sympatrically speciating Midas cichlid fish.  Genome Biology and Evolution 11, 1644-1657.
 }

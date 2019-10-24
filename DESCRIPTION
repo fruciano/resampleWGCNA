@@ -2,8 +2,8 @@ Package: resampleWGCNA
 Title: Resampling-based analyses on WGCNA results
 Version: 0.0.0.9000
 Authors@R: person("Carmelo", "Fruciano", email = "c.fruciano@unict.it", role = c("aut", "cre"))
-Description: Performs resampling-based analyses on WGCNA results
-Depends: R (>= 3.4.3),
+Description: Performs resampling based analyses on WGCNA results
+Depends: R (>= 3.4.0),
   WGCNA,
   GeometricMorphometricsMix
 License: GPL-3

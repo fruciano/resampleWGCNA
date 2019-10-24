@@ -39,7 +39,7 @@
 #' @references Fruciano C., Franchini P., Meyer A. 2013. Resampling-Based Approaches to Study Variation in Morphological Modularity. PLoS ONE 8:e69376.
 #' @references Fruciano, C., Meyer, A., Franchini, P. 2019. Divergent allometric trajectories in gene expression and coexpression produce species differences in sympatrically speciating Midas cichlid fish.  Genome Biology and Evolution 11, 1644-1657.
 #'
-#'
+#' @import GeometricMorphometricsMix
 #' @export
 test_RV_target_module = function(OriginalData, Original_blockwiseModules, target_module, X, permutations = 999, rarefied = FALSE,
     reps_rarefaction = 1000, samplesize_rarefaction = NULL) {

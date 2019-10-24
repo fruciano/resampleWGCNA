@@ -57,5 +57,5 @@ Escoufier Y. 1973. Le Traitement des Variables Vectorielles. Biometrics 29:751-7
 
 Fruciano C., Franchini P., Meyer A. 2013. Resampling-Based Approaches to Study Variation in Morphological Modularity. PLoS ONE 8:e69376.
 
-Fruciano C., Franchini P., Meyer A. 2019. Divergent Allometric Trajectories in Gene Expression and Coexpression Produce Species Differences in Sympatrically SpeciatingMidas Cichlid Fish. Genome Biology and Evolution 11(6):1644–1657.
+Fruciano, C., Meyer, A., Franchini, P. 2019. Divergent allometric trajectories in gene expression and coexpression produce species differences in sympatrically speciating Midas cichlid fish.  Genome Biology and Evolution 11, 1644-1657.
 }
