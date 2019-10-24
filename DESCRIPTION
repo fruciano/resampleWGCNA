@@ -5,7 +5,8 @@ Authors@R: person("Carmelo", "Fruciano", email = "c.fruciano@unict.it", role = c
 Description: Performs resampling based analyses on WGCNA results
 Depends: R (>= 3.4.0),
   WGCNA,
-  GeometricMorphometricsMix
+  GeometricMorphometricsMix,
+  biocViews:
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
