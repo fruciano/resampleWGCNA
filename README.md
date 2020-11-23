@@ -20,4 +20,7 @@ library(devtools)
 install_github("fruciano/resampleWGCNA")
 ```
 
-[![Build Status](https://travis-ci.org/fruciano/resampleWGCNA.svg?branch=master)](https://travis-ci.org/fruciano/resampleWGCNA)
+
+  <!-- badges: start -->
+  [![R build status](https://github.com/fruciano/resampleWGCNA/workflows/R-CMD-check/badge.svg)](https://github.com/fruciano/resampleWGCNA/actions)
+  <!-- badges: end -->
