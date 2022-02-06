@@ -20,3 +20,5 @@ library(devtools)
 install_github("fruciano/resampleWGCNA")
 ```
 
+## Badges
+[![R-CMD-check Actions Status](https://github.com/fruciano/resampleWGCNA/workflows/R-CMD-check/badge.svg)](https://github.com/fruciano/resampleWGCNA/actions)
